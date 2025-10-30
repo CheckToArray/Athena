@@ -1,4 +1,3 @@
-import "./utils/loadEnv.js"
 import express from "express";
 import cookieParser from "cookie-parser";
 import rateLimit from 'express-rate-limit';
@@ -24,7 +23,7 @@ const limiter = rateLimit({
 const app = express();
 app.use(limiter);
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  origin: ['http://localhost:5173', 'https://athena-flame.vercel.app'],
   credentials: true
 }));
 app.use(express.json());
