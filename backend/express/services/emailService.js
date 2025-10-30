@@ -7,7 +7,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS
   }
 });
-
 class EmailService {
   static async sendVerificationOTP(email, otp, fullName) {
     const mailOptions = {
@@ -50,7 +49,8 @@ class EmailService {
         </div>
       `
     };
-
+    console.log(process.env.EMAIL_USER)
+console.log(process.env.EMAIL_PASS)
     await transporter.sendMail(mailOptions);
   }
 
